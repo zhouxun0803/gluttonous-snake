@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color:pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 0;
+            left:0;
+        }
+        
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+            top: 0;
+            left:0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+<script>
+    var box1 = document.querySelector("#box1");
+    var box2 = document.querySelector("#box2");
+    var box3 = document.querySelector("#box3");
+    //   alert(document.documentElement.scrollHeight);
+    function fn(name){
+        name.onmousedown = function (e) {
+        var e = e || window.event;
+        var L = e.offsetX;
+        var T = e.offsetY;
+        document.onmousemove = function (e) {
+            var e = e || window.event;
+            var W = document.documentElement.scrollWidth;
+            var H = document.documentElement.scrollHeight;
+            var X = e.clientX - L;
+            var Y = e.clientY - T;
+            box1W = name.offsetWidth;
+            var box1H = name.offsetHeight
+            if (X < 0) {
+                X = 0;
+            }
+            if (X > W - box1W) {
+                X = W - box1W;
+            }
+            if (Y < 0) {
+                Y = 0;
+            }
+            if (Y > H - box1H) {
+                Y = H - box1H;
+            }
+            name.style.left = X + "px";
+            name.style.top = Y + "px";
+        }
+    }
+    document.onmouseup = function () {
+        document.onmousemove = "";
+    }
+    }
+    fn(box1);
+    fn(box2);
+    fn(box3);
+
+
+    // box2.onmousedown = function (e) {
+    //     var e = e || window.event;
+    //     var L = e.offsetX;
+    //     var T = e.offsetY;
+    //     document.onmousemove = function (e) {
+    //         var e = e || window.event;
+    //         var W = document.documentElement.scrollWidth;
+    //         var H = document.documentElement.scrollHeight;
+    //         var X = e.clientX - L;
+    //         var Y = e.clientY - T;
+    //         var box2W = box2.offsetWidth;
+    //         var box2H = box2.offsetHeight
+    //         if (X < 0) {
+    //             X = 0;
+    //         }
+    //         if (X > W - box2W) {
+    //             X = W - box2W;
+    //         }
+    //         if (Y < 0) {
+    //             Y = 0;
+    //         }
+    //         if (Y > H - box2H) {
+    //             Y = H - box2H;
+    //         }
+    //         box2.style.left = X + "px";
+    //         box2.style.top = Y + "px";
+    //     }
+    // }
+    // document.onmouseup = function () {
+    //     document.onmousemove = "";
+    // }
+</script>
+
+</html>

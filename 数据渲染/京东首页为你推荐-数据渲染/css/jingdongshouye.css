@@ -1,0 +1,152 @@
+.box_warp{
+    min-width: 1190px;
+    overflow: hidden;
+    background-color: #e3e4e5;
+}
+.box{
+    width: 1190px;
+    margin: 0 auto;
+}
+.top{
+    width: 1190px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+}
+.top p{
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+}
+.tit{
+    width: 1190px;
+    height: 60px;
+    margin: 20px 0 10px;
+    background-color: #fff;
+}
+.tit ul{
+    width: 1080px;
+    height: 60px;
+    margin: 0 auto;
+}
+.tit ul li{
+    width: 180px;
+    height: 60px;
+    text-align: center;
+    float: left;
+}
+.tit ul li .it{
+    height: 27px;
+    margin-left: 50px;
+}
+.tit ul li h1{
+    width: 70px;
+    height: 27px;
+    padding: 0 5px;
+    line-height: 27px;
+   font-size: 16px;
+   color: #333;
+   font-weight: 700;
+   margin-top: 7px;
+   border-radius: 20px;
+   /* background-color: #e1251b; */
+}
+.tit ul li h2{
+    height: 21px;
+    line-height: 21px;
+   font-size: 14px;
+   color: #999;
+}
+.box .tit ul li:hover h1{
+    color: #e1251b;
+}
+ .box .tit ul li:hover h2{
+    color: #e1251b;
+}
+.box .tit ul li:nth-of-type(1) h1{
+    background:red;
+    color:#fff;
+    border-radius:20px;
+}
+.con{
+    width: 1190px;
+    overflow: hidden;
+}
+.con ul{
+    width: 1190px;
+    display: none;
+}
+.con ul:nth-of-type(1){
+    display: block;
+}
+.con ul li{
+    width: 230px;
+    height: 322px;
+    background-color: #fff;
+    float: left;
+    margin: 0px 10px 10px 0;
+}
+.con ul li:nth-of-type(5n){
+    margin-right: 0;
+}
+.con ul li:nth-of-type(10)~li{
+    margin-bottom: 0;
+}
+.con ul li a{
+    display: inline-block;
+    width: 230px;
+    height: 322px;
+}
+.imgs{
+    width: 150px;
+    height: 150px;
+    margin: 30px auto 40px;
+}
+.con ul li a img{
+    width: 150px;
+    height: 150px;
+}
+.con ul li a .into{
+    height: 48px;
+    padding: 0 20px;
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 24px;
+}
+.into h3{
+   display: inline-block;
+    height: 16px;
+    
+    font-size: 12px;
+    color: #000;
+    background-color: #e1251b;
+    padding: 0 5px;
+    line-height: 18px;
+}
+.price{
+    padding: 10px 20px 0px;
+    height: 18px;
+    line-height: 18px;
+    color: #e1251b;
+    font-size: 0;
+}
+.price em{
+    font-size:12px ;
+    font-weight: 700;
+}
+.price b{
+    font-size:20px ;
+    font-weight: 700;
+}
+.price i{
+    font-size:12px ;
+    font-weight: 700;
+}
+

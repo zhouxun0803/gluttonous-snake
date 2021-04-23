@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        em,
+        i {
+            font-style: normal;
+        }
+
+        .box_warp {
+            width: 500px;
+            height: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        video {
+            width: 500px;
+            height: 517px;
+        }
+
+        .box {
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .tit {
+            width: 500px;
+            height: 100px;
+            margin-top: 117px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        .tit #em1 {
+            font-size: 50px;
+            color: palevioletred;
+        }
+
+        .tit #em2 {
+            font-size: 40px;
+            color: seagreen;
+        }
+
+        .tit #em3 {
+            font-size: 50px;
+            color: powderblue;
+        }
+
+        .con {
+            width: 500px;
+            height: 50px;
+            /* background-color: springgreen; */
+            margin: 25px auto;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .con b {
+            display: inline-block;
+            width: 83px;
+            height: 60px;
+            font-size: 45px;
+            position: relative;
+        }
+
+        .con #b1 {
+            color: salmon;
+        }
+
+        .con #b2 {
+            color: skyblue;
+        }
+
+        .con #b3 {
+            color: palevioletred;
+        }
+
+        .con i {
+            position: absolute;
+            top: -5px;
+            right: -7px;
+        }
+
+        .floor {
+            width: 500px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #but1 {
+            display: inline-block;
+            width: 80px;
+            height: 50px;
+            background-color: turquoise;
+            font-size: 20px;
+            margin: 0 5px;
+            color: tomato;
+        }
+
+        #but2 {
+            display: inline-block;
+            width: 80px;
+            height: 50px;
+            background-color: tomato;
+            font-size: 20px;
+            margin: 0 5px;
+            color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box_warp">
+        <video src="shipin.mp4" autoplay muted loop></video>
+        <div class="box">
+            <div class="tit">
+                <em id="em1">计</em>
+                <em id="em2">时</em>
+                <em id="em3">器</em>
+            </div>
+            <div class="con">
+                <b id="b1">00
+                    <i>:</i>
+                </b>
+                <b id="b2">00
+                    <i>:</i>
+                </b>
+                <b id="b3">00
+                </b>
+            </div>
+            <div class="floor">
+                <button id="but1">begin</button>
+                <button id="but2">reset</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var arr = 0; bool = true;
+        var date;
+        but1.onclick = function () {
+            if (bool) {
+                date = setInterval(function () {
+                    arr++;
+                    console.log(arr);
+                    var a, b, c;
+                    if (arr >= 0) {
+                        a = Math.floor(arr / 60 / 60 % 24);
+                        b = Math.floor(arr / 60 % 60);
+                        c = Math.floor(arr % 60);
+                    }
+                    console.log(a, b, c);
+                    if (a < 10) {
+                        a = "0" + a;
+                    }
+                    if (b < 10) {
+                        b = "0" + b;
+                    }
+                    if (c < 10) {
+                        c = "0" + c;
+                    }
+                    b1.innerHTML = `${a}<i>:</i>`;
+                    b2.innerHTML = `${b}<i>:</i>`;
+                    b3.innerHTML = `${c}`;
+                }, 1000);
+                bool = false;
+                but1.innerHTML = "suspend";
+            } else {
+                clearInterval(date);
+                bool = true;
+                but1.innerHTML = "begin";
+            }
+        }
+        but2.onclick = function () {
+            b1.innerHTML = `00<i>:</i>`;
+            b2.innerHTML = `00<i>:</i>`;
+            b3.innerHTML = "00";
+            clearInterval(date);
+            arr = 0;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+      }
+
+      .banner_warp {
+         width: 590px;
+         height: 470px;
+         border: 2px solid red;
+         margin: 50px auto;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .banner {
+         /* width: 6000px; */
+         height: 470px;
+         /* display: flex; */
+      }
+
+      .banner li {
+         width: 590px;
+         height: 470px;
+         float: left;
+      }
+
+      .page {
+         width: 100%;
+         position: absolute;
+         left: 0;
+         bottom: 10px;
+         text-align: center;
+      }
+
+      .page span {
+         display: inline-block;
+         width: 25px;
+         height: 25px;
+         background-color: rgba(0, 0, 0, 0.5);
+         border-radius: 50%;
+         user-select: none;
+         -moz-user-select: none;
+         -webkit-user-select: none;
+         cursor: pointer;
+      }
+
+      .banner_left,
+      .banner_right {
+         width: 50px;
+         height: 60px;
+         font-size: 30px;
+         color: #fff;
+         background-color: rgba(0, 0, 0, 0.5);
+         position: absolute;
+         top: 50%;
+         margin-top: -30px;
+         text-align: center;
+         line-height: 60px;
+         user-select: none;
+         -moz-user-select: none;
+         -webkit-user-select: none;
+         cursor: pointer;
+      }
+
+      .banner_left {
+         left: 0;
+      }
+
+      .banner_right {
+         right: 0;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="banner_warp">
+      <ul class="banner">
+         <li><img src="image/banner8.jpg" alt=""></li>
+         <li><img src="image/banner1.jpg" alt=""></li>
+         <li><img src="image/banner2.jpg" alt=""></li>
+         <li><img src="image/banner3.jpg" alt=""></li>
+         <li><img src="image/banner4.jpg" alt=""></li>
+         <li><img src="image/banner5.jpg" alt=""></li>
+         <li><img src="image/banner6.jpg" alt=""></li>
+         <li><img src="image/banner7.jpg" alt=""></li>
+         <li><img src="image/banner8.jpg" alt=""></li>
+         <li><img src="image/banner1.jpg" alt=""></li>
+      </ul>
+      <div class="page">
+         <span>1</span>
+         <span>2</span>
+         <span>3</span>
+         <span>4</span>
+         <span>5</span>
+         <span>6</span>
+         <span>7</span>
+         <span>8</span>
+      </div>
+      <div class="banner_left">《</div>
+      <div class="banner_right">》</div>
+   </div>
+</body>
+<script>
+   var banner = document.querySelector(".banner");
+   var page = document.querySelectorAll(".page span");
+   var bannerLeft = document.querySelector(".banner_left");
+   var bannerRight = document.querySelector(".banner_right");
+   var bannerLi = document.querySelectorAll(".banner li");
+   var bannerImg = document.querySelectorAll(".banner li img");
+   var count = bannerLi[0].offsetWidth;
+   var imgLenght = bannerImg.length;
+   banner.style.width = count * imgLenght + "px";
+   banner.style.marginLeft = -count + "px";
+   var num = 1;
+   page[0].style.background = "red";
+   function rest() {
+      for (var m = 0; m < page.length; m++) {
+         page[m].style.background = "";
+      }
+   }
+   boo = true;
+   bannerRight.onclick = function () {
+      if (boo) {
+         boo = false;
+         setTimeout(function () {
+            boo = true;
+         }, 300)
+         clearInterval(time);
+            num++;
+            rest();
+            if (num >= bannerImg.length - 1) {
+               setTimeout(function () {
+                  num = 1;
+                  banner.style.marginLeft = -count + "px";
+                  banner.style.transition = "";
+               }, 300)
+               page[0].style.background = "red";
+            } else {
+               page[num - 1].style.background = "red";
+            }
+            banner.style.marginLeft = num * -count + "px";
+            banner.style.transition = "margin-left 0.3s linear";
+            atuomove();
+      }
+   }
+
+   bannerLeft.onclick = function () {
+      if(boo){
+         boo=false;
+         setTimeout(function(){
+           boo=true;
+         },300)
+         clearInterval(time);
+      num--;
+      rest();
+      if (num <= 0) {
+         setTimeout(function () {
+            num = bannerImg.length - 2;
+            banner.style.marginLeft = -count * (bannerImg.length - 2) + "px";
+            banner.style.transition = "";
+         }, 300)
+         page[bannerImg.length - 3].style.background = "red";
+      } else {
+         page[num - 1].style.background = "red";
+      }
+      banner.style.marginLeft = num * -count + "px";
+      banner.style.transition = "margin-left 0.3s linear";
+      atuomove();
+      }
+   }
+   page.forEach(function (item, index) {
+      item.onclick = function () {
+         clearInterval(time);
+         rest();
+         num = index + 1;
+         console.log(item.innerHTML)
+         banner.style.marginLeft = -count * num + "px";
+         item.style.background = "red";
+         // banner.style.transition = "margin-left 0.3s linear";
+         atuomove();
+      }
+   })
+   atuomove();
+   var time;
+   function atuomove() {
+      time = setInterval(function () {
+         num++;
+         rest();
+         if (num >= bannerImg.length - 1) {
+            setTimeout(function () {
+               num = 1;
+               banner.style.marginLeft = -count + "px";
+               banner.style.transition = "";
+            }, 300)
+            page[0].style.background = "red";
+         } else {
+            page[num - 1].style.background = "red";
+         }
+         banner.style.marginLeft = num * -count + "px";
+         banner.style.transition = "margin-left 0.3s linear";
+      }, 3000)
+   }
+
+
+
+</script>
+
+</html>

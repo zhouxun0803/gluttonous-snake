@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    em,
+    i {
+        font-style: normal;
+    }
+
+    .box_warp {
+        width: 100%;
+        min-width: 1190px;
+        overflow: hidden;
+        background-color: #e3e4e5;
+        margin-top: 50px;
+    }
+
+    .box {
+        width: 1190px;
+        margin: 0 auto;
+
+    }
+
+    .title {
+        width: 1190px;
+        height: 60px;
+        margin-bottom: 10px;
+        background-color: #fff;
+
+    }
+
+    .title>ul {
+        width: 1080px;
+        height: 60px;
+        margin: 0 auto;
+    }
+
+    .title>ul>li {
+        width: 180px;
+        height: 60px;
+        box-sizing: border-box;
+        float: left;
+        list-style: none;
+        text-align: center;
+        font-size: 0;
+    }
+
+    .title>ul>li:nth-of-type(6) {
+        border-right: none;
+    }
+
+    .title>ul>li>h1 {
+        font-size: 16px;
+        color: #333;
+        margin: 4px 0px 0px 49px;
+        width:70px;
+        height:27px;
+        line-height: 27px;
+        background-color:#fff;
+        padding:0px 5px;
+        border-radius:50px;
+    }
+    .title ul li:nth-of-type(1) h1{
+        color: #fff;
+        background-color:#e1251b;
+    }
+    /* .title ul li h1:nth-of-type(1):hover{
+        color: #fff;
+    } */
+    /* .title ul li h1:hover{
+        color: #e1251b;
+    } */
+
+    .title>ul>li>h2 {
+        font-size: 14px;
+        color: #999;
+        padding-top: 5px;
+    }
+    .con {
+        width: 1190px;
+    }
+
+    .con ul {
+        width: 1190px;
+    }
+
+    .con ul li {
+        width: 230px;
+        height: 322px;
+        background-color: #fff;
+        float: left;
+        list-style: none;
+        margin: 0px 10px 10px 0;
+    }
+
+    .con ul li:nth-of-type(5n) {
+        margin-right: 0;
+    }
+
+    .con ul li a {
+        display: inline-block;
+        width: 230px;
+        height: 322px;
+        background-color: #fff;
+    }
+
+    .con ul li a img {
+        width: 150px;
+        height: 150px;
+        margin: 30px 40px 40px;
+    }
+
+    .con ul li a h3 {
+        height: 48px;
+        padding: 0 20px;
+        font-size: 14px;
+        line-height: 24px;
+        color: #666;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+    }
+
+    .con ul li a h4 {
+        padding: 10px 20px 0;
+        position: relative;
+    }
+
+    .con ul li a h4 em {
+        font-size: 12px;
+        color: #e1251b;
+       position: absolute;
+       top: 16px;
+       left: 18px;
+    }
+
+    .con ul li a h4 b {
+        font-size: 18px;
+        color: #e1251b;
+        margin-left: 10px;
+    }
+
+    .con ul li a h4 i {
+        font-size: 12px;
+        color: #e1251b;
+        position: absolute;
+       top: 16px;
+       left: 80px;
+    }
+    .con ul{
+        display: none;
+    }
+    .con ul:nth-of-type(1){
+        display: inline-block;
+    }
+   .box_warp .box .title ul li:hover{
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="box_warp">
+        <div class="box">
+            <div class="title">
+                <ul class="list">
+                    <!-- <li>
+                        <h1>精选</h1>
+                        <h2>猜你喜欢</h2>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="con">
+                <!-- <ul>
+                    <li>
+                        <a href="">
+                            <img src="2.png" alt="">
+                            <h3>欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱
+                                一体机LX6-SZK 包安装+头部加热+蒸烤消三合一 天然气</h3>
+                            <h4><em>￥</em><b>4998.</b><i>00</i></h4>
+                        </a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var data = [
+        {
+            tit: [
+                {
+                    h1: "精选",
+                    h2: "猜你喜欢",
+                },
+            ],
+            goods: [
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+            ]
+
+        },
+        {
+            tit: [
+                {
+                    h1: "智能先锋",
+                    h2: "大电器城",
+                },
+            ],
+            goods: [
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+            ]
+
+        },
+        {
+            tit: [
+                {
+                    h1: "居家优品",
+                    h2: "品质生活",
+                },
+            ],
+            goods: [
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+            ]
+
+        },
+        {
+            tit: [
+                {
+                    h1: "超市百货",
+                    h2: "百货生鲜",
+                },
+            ],
+            goods: [
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+            ]
+
+        },
+        {
+            tit: [
+                {
+                    h1: "时尚达人",
+                    h2: "美妆穿搭",
+                },
+            ],
+            goods: [
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "1.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+            ]
+
+        },
+        {
+            tit: [
+                {
+                    h1: "进口好物",
+                    h2: "京东国际",
+                },
+            ],
+            goods: [
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+                {
+                    img: "2.png",
+                    h3: "欧尼尔（OUNIER）集成灶蒸烤一体灶下排式双电机环保家用自动清洗消毒带蒸箱烤箱一体机LX6- SZK 包安装 + 头部加热 + 蒸烤消三合一 天然气",
+                    em: "￥",
+                    b: "4998.",
+                    i: "00",
+                },
+            ]
+
+        },
+    ]
+    var lis = document.querySelector(".title ul")
+    var con = document.querySelector(".con")
+    for (var m = 0; m < data.length; m++) {
+        lis.innerHTML += `
+         <li></li>
+         `
+        con.innerHTML += `
+         <ul>
+         </ul>
+         `
+    }
+    var lia = document.querySelectorAll(".title ul li")
+    for (var n = 0; n < data.length; n++) {
+        for (var i = 0; i < data[n].tit.length; i++) {
+            lia[n].innerHTML += `
+         <h1>${data[n].tit[i].h1}</h1>
+         <h2>${data[n].tit[i].h2}</h2>
+         `
+        }
+    }
+    var uls = document.querySelectorAll(".con ul")
+    // console.log(uls)
+    for (var d = 0; d < data.length; d++) {
+        for (var c = 0; c < data[d].goods.length; c++) {
+            uls[d].innerHTML += `
+         <li>
+         <a href="">
+         <img src=${data[d].goods[c].img} alt="">
+         <h3>${data[d].goods[c].h3}</h3>
+         <h4>
+            <em>${data[d].goods[c].em}</em>
+            <b>${data[d].goods[c].b}</b>
+            <i>${data[d].goods[c].i}</i>
+         </h4>
+         </a>
+         </li>
+         `
+        }
+    }
+    var lia = document.querySelectorAll(".title ul li");
+    var uls = document.querySelectorAll(".con ul")
+    for(var e=0;e<lia.length;e++){
+        lia[e].id=e;
+        lia[e].onclick=function(){
+            for(var f=0;f<lia.length;f++){
+                lia[f].style="color:#999";
+                uls[f].style="display:none;";
+            }
+            // this.style="width:90px;height:27px;backgroungColor:#e1251b;border-radius:15px;border:1px solid #e1251b;"
+            this.style="color:blue";
+            uls[this.id].style="display:block;";
+        }
+    }
+    var h1=document.querySelectorAll(".title ul li h1")
+    var h2=document.querySelectorAll(".title ul li h2")
+    // console.log(h1)
+    for(var r=0;r<data.length;r++){
+        h1[r].onclick=function(){
+            for(var z=0;z<data.length;z++){
+                h1[z].style="color:#333;background:#fff"
+               
+
+            }
+            this.style="color:#fff;background:#e1251b;"
+        }   
+    }
+
+    for(var x=0;x<data.length;x++){
+
+        lia[x].onmouseover=function(){
+            // for(var h=0;h<data.length;h++){
+            //     h1[h].style="color:#333"
+            //     h2[h].style="color:#333"
+            // }
+            h1[x].style="color:#e1251b;"
+            h2[x].style="color:#e1251b;"
+        }   
+    }
+   
+
+</script>
+
+</html>

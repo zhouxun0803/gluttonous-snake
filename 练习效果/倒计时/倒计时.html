@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box_warp {
+            width: 1010px;
+            height: 510px;
+            border: 2px solid #333;
+            margin: 50px auto;
+        }
+
+        #tit {
+            width: 1010px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+            color: #000;
+        }
+
+        #box {
+            width: 1000px;
+            height: 450px;
+            border: 5px solid blueviolet;
+        }
+
+        #box1 {
+            width: 990px;
+            height: 105px;
+            margin: 3px;
+            border: 2px solid blueviolet;
+        }
+
+        #box1 h4 {
+            width: 200px;
+            height: 40px;
+            border: 1px solid #333;
+            margin: 32px 395px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        #box2 {
+            width: 990px;
+            height: 105px;
+            margin: 3px;
+            border: 2px solid blueviolet;
+        }
+
+        #box2 span {
+            display: inline-block;
+            width: 322px;
+            height: 101px;
+            border: 2px solid blueviolet;
+        }
+
+        #box span input {
+            width: 215px;
+            height: 30px;
+            margin: 35px 0 0 5px;
+        }
+
+        #box span:nth-of-type(2) {
+            margin: 0 1px;
+        }
+
+        #box3 {
+            width: 990px;
+            height: 105px;
+            margin: 3px;
+            border: 2px solid blueviolet;
+            overflow: hidden;
+        }
+
+        strong {
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #p1 {
+            width: 215px;
+            height: 30px;
+            border: 1px solid #333;
+            display: block;
+            float: left;
+            margin: 30px 0 0 165px;
+        }
+
+        #p2 {
+            width: 50px;
+            height: 30px;
+            border: 1px solid #333;
+            display: inline-block;
+            margin: 30px 0 0 15px;
+        }
+
+        #p3 {
+            width: 50px;
+            height: 30px;
+            border: 1px solid #333;
+            display: inline-block;
+            margin: 30px 0 0 15px;
+        }
+
+        #p4 {
+            width: 50px;
+            height: 30px;
+            border: 1px solid #333;
+            display: inline-block;
+            margin: 30px 0 0 15px;
+        }
+
+        #p5 {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #333;
+            display: inline-block;
+            margin: 30px 0 0 15px;
+        }
+
+        em {
+            display: inline-block;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        #box4 {
+            width: 990px;
+            height: 105px;
+            margin: 3px;
+            border: 2px solid blueviolet;
+            /* margin-top: 25px; */
+        }
+
+        button {
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #333;
+            margin-top: 30px;
+        }
+
+        #but1 {
+            font-size: 20px;
+            margin-left: 365px;
+            background-color: cyan;
+        }
+        #but2 {
+            font-size: 20px;
+            background-color:red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box_warp">
+        <p id="tit">计算到x年x月x日的倒计时</p>
+        <div id="box">
+            <div id="box1">
+                <h4>如：距离国庆节还有</h4>
+            </div>
+            <div id="box2">
+                <span><input type="text" placeholder="请输入：" name="" id="ipt1">年</span>
+                <span><input type="text" placeholder="请输入：" name="" id="ipt2">月</span>
+                <span><input type="text" placeholder="请输入：" name="" id="ipt3">日</span>
+            </div>
+            <div id="box3">
+                <strong id="p1">如：距离国庆节还有:</strong>
+                <strong id="p2">0</strong><em>天</em>
+                <strong id="p3">00</strong><em>小时</em>
+                <strong id="p4">00</strong><em>分</em>
+                <strong id="p5">00</strong><em>秒</em>
+            </div>
+            <div id="box4">
+                <button id="but1">开始</button>
+                <button id="but2">清空</button>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        var reg1 = /^\d{4}$/;
+        ipt1.onblur = function () {
+            if (reg1.test(ipt1.value)){
+                //   alert("输入正确")
+            } else {
+                alert("输入错误")
+            }
+        }
+        var reg2 = /^([1-9]|1[0-2])$/;
+        ipt2.onblur = function () {
+            if (reg2.test(ipt2.value)) {
+                //   alert("输入正确")
+            } else {
+                alert("输入错误")
+            }
+        }
+        var reg3 = /^([1-9]|([1-2][0-9])|(3[0-1]))$/;
+        ipt3.onblur = function () {
+            if (reg3.test(ipt3.value)) {
+                //   alert("输入正确")
+            } else {
+                alert("输入错误")
+            }
+        }
+        var clear="";
+        but1.onclick = function () {
+            clearInterval(clear);
+            clear = setInterval(function () {
+                var nowdate = new Date();
+                var ipt = ipt1.value + "-" + ipt2.value + "-" + ipt3.value
+                var date = new Date(ipt);
+                var allTime = date - nowdate;
+                var day = parseInt(allTime / (24 * 60 * 60 * 1000));
+                var _day = allTime % (24 * 60 * 60 * 1000);
+                var h = parseInt(_day / (60 * 60 * 1000));
+                var _h = _day % (60 * 60 * 1000);
+                var m = parseInt(_h / (60 * 1000));
+                var _m = _h % (60 * 1000);
+                var s = parseInt(_m / (1000));
+                if(h<10){
+                     h="0"+h;
+                 }
+                 if(m<10){
+                     m="0"+m;
+                 }
+                 if(s<10){
+                     s="0"+s;
+                 }
+                p2.innerHTML = day;
+                p3.innerHTML = h;
+                p4.innerHTML = m;
+                p5.innerHTML = s;
+            }, 100)
+        }
+        but2.onclick = function () {
+            clearInterval(clear);
+            ipt1.value="";
+            ipt2.value="";
+            ipt3.value="";
+            p2.innerHTML="";
+            p3.innerHTML="";
+            p4.innerHTML="";
+            p5.innerHTML="";
+            
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

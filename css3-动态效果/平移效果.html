@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 200px;
+            border: 2px solid red;
+            margin: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3000px;
+            height: 200px;
+            animation: pingyi 15s linear infinite normal;
+        }
+
+        .box1 img {
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+
+        @keyframes pingyi {
+            0% {
+                transform: translate(0px);
+            }
+
+            30% {
+                transform: translate(0px);
+            }
+
+            33% {
+                transform: translate(-200px);
+            }
+
+            63% {
+                transform: translate(-200px);
+            }
+
+            66% {
+                transform: translate(-400px);
+            }
+
+            96% {
+                transform: translate(-400px);
+            }
+
+            100% {
+                transform: translate(-600px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <img src="1.png" alt="">
+            <img src="2.png" alt="">
+            <img src="3.png" alt="">
+            <img src="1.png" alt="">
+            <img src="2.png" alt="">
+            <img src="3.png" alt="">
+
+            <img src="1.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

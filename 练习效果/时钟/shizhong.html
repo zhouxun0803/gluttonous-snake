@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shizhong</title>
+    <link rel="stylesheet" href="css/shizhong.css">
+    <script src="jquery/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <div class="box_wrap">
+
+        <!-- 圣诞背景图 -->
+        <img class="bg_img" src="image/tu6.gif" alt="">
+        <img class="party_logo" src="image/party_logo.gif" alt="">
+        <img class="tree" src="image/shengdanshu1.gif" alt="">
+        <img class="Santa_Claus" src="image/tu9.gif" alt="">
+
+        <!-- 表盘 -->
+        <div class="box">
+
+            <!-- 刻度 -->
+            <ul class="kedu"></ul>
+
+            <!-- 秒针、分针、时针 -->
+            <ul class="zhen">
+                <li class="shizhen">
+                    <p class="shi"></p>
+                </li>
+                <li class="fenzhen">
+                    <p class="fen"></p>
+                </li>
+                <li class="miaozhen">
+                    <p class="miao"></p>
+                </li>
+            </ul>
+
+            <!-- 时钟中心的装饰 -->
+            <span class="tubiao"></span>
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+
+            // 获取屏幕的宽高
+            var dW = $(document).width();
+            var dH = $(document).height();
+
+            // 设置容器宽高
+            $(".box_wrap").css({
+                "width": `${dW}`,
+                "height": `${dH}`,
+            })
+
+            // 设置背景图宽高
+            $(".box_wrap .bg_img").css({
+                "width": `${dW}`,
+                "height": `${dH}`,
+            });
+
+            // 控制圣诞老人
+            var SantaClaus = $(".box_wrap .Santa_Claus");
+            var num = 0;
+            setInterval(function () {
+                num += 5;
+                SantaClaus.css("marginLeft", `${num}` + "px");
+                if (num >= dW + 80) {
+                    num = 0;
+                }
+            }, 50);
+
+            // 创建刻度
+            for (var m = 0; m <= 60; m++) {
+                var li = ("<li><p></p></li>");
+                $(".kedu").append(li);
+            };
+
+            // 分配刻度
+            var keduLi = $(".kedu li");
+            $.each(keduLi, function (index, item) {
+                $(this).css('transform', 'rotate(' + index * 6 + 'deg)');
+            });
+
+            var miao = $(".zhen .miaozhen");
+            var fen = $(".zhen .fenzhen");
+            var shi = $(".zhen .shizhen");
+            setInterval(function () {
+
+                var date = new Date();
+                // 获取时、分、秒
+                var h = date.getHours() * 30 - 90;
+                var m = date.getMinutes() * 6 - 90;
+                var s = date.getSeconds() * 6 - 90;
+
+                h += date.getMinutes() / 2;
+                m += s / 60;
+                shi.css('transform', 'rotate(' + h + 'deg)');   // 让时针动起来
+                fen.css('transform', 'rotate(' + m + 'deg)');   // 让分针动起来
+                miao.css('transform', 'rotate(' + s + 'deg)');  // 让秒针动起来
+
+            }, 1000);
+
+        });
+    </script>
+
+</body>
+
+</html>

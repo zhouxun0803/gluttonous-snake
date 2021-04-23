@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{text-decoration: none;}
+li{list-style: none;}
+em,i{font-style: normal;}
+strong,b{font-weight: normal;}
+input{outline: none;}
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}

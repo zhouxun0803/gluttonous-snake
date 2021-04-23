@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            /* float: left; */
+            font-size: 100px;
+            color:#fff;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body style="background: url(/img/bei.jpg);">
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+    <span>:</span>
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+    <span>:</span>
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+    <span>:</span>
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+    <span>:</span>
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+    <span>:</span>
+    <img src="img/9.png" alt="">
+    <img src="img/9.png" alt="">
+</body>
+<script>
+    var obody=document.getElementsByTagName('body')[0];
+    var oimg=document.getElementsByTagName('img');
+    setInterval(function(){
+        var dat=new Date();
+    // 获取年月日 时分秒
+    var y=dat.getFullYear();
+    var M=dat.getMonth()+1;
+    var d=dat.getDate();
+    var h=dat.getHours();
+    var m=dat.getMinutes();
+    var s=dat.getSeconds();
+    // 把时间改成图片 2020-10-09 15:06:43
+    //  console.log(y)
+    //拆解年 
+    var y1=y%10;//0  
+    var y2=parseInt(y%100/10)//2
+    var y3=parseInt(y%1000/100)//0
+    var y4=parseInt(y/1000)//2
+    // console.log(y1,y2,y3,y4) 
+     //拆解月 
+    var M1=M%10; 
+    var M2=parseInt(M/10)
+    // 日
+    var d1=d%10; 
+    var d2=parseInt(d/10)
+    //时
+    var h1=h%10; 
+    var h2=parseInt(h/10)
+    //分
+    var m1=m%10; 
+    var m2=parseInt(m/10)
+    //秒
+    var s1=s%10; 
+    var s2=parseInt(s/10)
+    //匹配照片
+    // <img src="img/9.png" alt="">
+    // for(var i=0; i<oimg.length; i++){
+    //     oimg
+    // } 
+    oimg[0].src= 'img/'+y4+'.png'; 
+    oimg[1].src= 'img/'+y3+'.png';
+    oimg[2].src= 'img/'+y2+'.png'; 
+    oimg[3].src= 'img/'+y1+'.png';
+    oimg[4].src= 'img/'+M2+'.png';
+    oimg[5].src= 'img/'+M1+'.png';
+    oimg[6].src= 'img/'+d2+'.png';
+    oimg[7].src= 'img/'+d1+'.png';
+    oimg[8].src= 'img/'+h2+'.png'; 
+    oimg[9].src= 'img/'+h1+'.png';
+    oimg[10].src= 'img/'+m2+'.png'; 
+    oimg[11].src= 'img/'+m1+'.png';
+    oimg[12].src= 'img/'+s2+'.png';
+    oimg[13].src= 'img/'+s1+'.png';
+    },1000)
+
+
+</script>
+</html>

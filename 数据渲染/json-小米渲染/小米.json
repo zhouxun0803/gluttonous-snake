@@ -1,0 +1,65 @@
+{
+ "date":[
+  {
+   "banner_href":"#",
+   "banner_img":"image/tu1-l.jpg",
+   "header_title":"家电",
+   "header_more1":"热门",
+   "header_more2":"电视影音",
+   "row_img1":"image/tu1-m.jpg",
+   "row_img2":"image/tu6-m.jpg",
+   "goods":[
+    {
+     "goods_img":"image/tu2-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    },
+    {
+     "goods_img":"image/tu3-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    },
+    {
+     "goods_img":"image/tu4-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    },
+    {
+     "goods_img":"image/tu5-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    },
+    {
+     "goods_img":"image/tu7-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    },
+    {
+     "goods_img":"image/tu8-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    },
+    {
+     "goods_img":"image/tu9-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    },
+    {
+     "goods_img":"image/tu10-m.jpg",
+     "goods_title":"米家互联网洗烘一体机 Pro 10kg",
+     "goods_desc":"智能洗烘，省心省力",
+     "goods_price":"3299元"
+    }
+   ]
+   
+
+  }
+ ]
+}

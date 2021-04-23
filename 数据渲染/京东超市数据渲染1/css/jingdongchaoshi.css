@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+em,i{
+    font-style: normal;
+}
+strong,b{
+    font-weight: normal;
+}
+.box_warp{
+    min-width: 1190px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+.box{
+    width: 1190px;
+    height: 540px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.tit{
+    width: 1190px;
+    height: 35px;
+    padding: 0 0 20px;
+    text-align: center;
+}
+.tit p{
+    font-size: 26px;
+    color: #333;
+}
+.con{
+    width: 1190px;
+    height: 485px;
+}
+.focus{
+    width: 190px;
+    height: 485px;
+    float: left;
+    position: relative;
+}
+.focus a{
+    display: inline-block;
+    width: 190px;
+    height: 485px;
+}
+.focus img{
+    width: 190px;
+    height: 485px;
+}
+.key{
+    height: 133px;
+    padding: 20px 10px 12px;
+    background-color: rgba(0,0,0,.2);
+   position: absolute;
+   bottom: 0;
+}
+.key a{
+    float: left;
+    display:block;
+    width:73px ;
+    height: 24px;
+    margin: 0 5px 8px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    border: 1px solid hsla(0,0%,100%,.6);
+}
+.goods{
+    width: 1000px;
+    height: 488px;
+    float: left;
+}
+.goods ul{
+    width: 1000px;
+    height: 488px;
+    background-color: #fff;
+}
+.goods ul li{
+    width: 169px;
+    height: 233px;
+    padding: 10px 15px 0;
+    float: left;
+    border-right: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+}
+.goods ul li a{
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    padding:0 20px 17px;
+    
+}
+.goods ul li a img{
+    width:130px ;
+    height: 130px;
+}
+.goods ul li h1{
+    font-size:12px ;
+    color: #333;
+    height: 35px;
+    margin-bottom: 7px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: clip;
+    font-weight: 500;
+}
+.goods ul li h2{
+    font-size: 14px;
+    color: #ff002f;
+}

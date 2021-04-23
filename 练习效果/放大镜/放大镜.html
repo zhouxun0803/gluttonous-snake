@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Document</title>
+ <style>
+  *{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+  }
+  .itemarea{
+   width: 450px;
+   height: 550px;
+   margin: 50px auto;
+   border:2px solid #333;
+   position: relative;
+  }
+  .pic{
+   width: 450px;
+   height: 450px;
+   position: relative;
+  }
+  .fdj{
+   width: 255px;
+   height: 255px;
+   background-color: rgba(188, 204, 46, 0.5);
+   position:absolute;
+   top: 0;
+   left: 0;
+   cursor: all-scroll;
+   display: none;
+  }
+  .list{
+   width: 450px;
+   height: 100px;
+  }
+  .list li{
+   width: 75px;
+   height: 75px;
+   float: left;
+   border:1px solid red;
+   margin: 12px 6px;
+  }
+  .list li img{
+   width: 75px;
+   height: 75px;
+  }
+  .detail{
+   width: 450px;
+   height: 450px;
+   border:1px solid red;
+   position: absolute;
+   top: 0;
+   left: 450px;
+   overflow: hidden;
+   display: none;
+  }
+ </style>
+</head>
+<body>
+   <div class="itemarea">
+    <div class="pic">
+     <img src="image/tu1-m.jpg" alt="">
+    <div class="fdj"></div>
+    </div>
+    <ul class="list">
+     <li><img src="image/tu1-s.jpg" alt=""></li>
+     <li><img src="image/tu2-s.jpg" alt=""></li>
+     <li><img src="image/tu3-s.jpg" alt=""></li>
+     <li><img src="image/tu4-s.jpg" alt=""></li>
+     <li><img src="image/tu5-s.jpg" alt=""></li>
+    </ul>
+    <div class="detail">
+     <img src="image/tu1-l.jpg" alt="">
+    </div>
+   </div>
+</body>
+<script>
+ var fdj=document.querySelector(".fdj");
+ var sImg=document.querySelectorAll(".list li img");
+ var lImg=document.querySelector(".detail img");
+ var mImg=document.querySelector(".pic img");
+ var pic=document.querySelector(".pic");
+ var detail=document.querySelector(".detail");
+ var arrImgM=["image/tu1-m.jpg","image/tu2-m.jpg","image/tu3-m.jpg","image/tu4-m.jpg","image/tu5-m.jpg",]
+ var arrImgL=["image/tu1-l.jpg","image/tu2-l.jpg","image/tu3-l.jpg","image/tu4-l.jpg","image/tu5-l.jpg",]
+ sImg.forEach(function(item,index){
+  item.onmouseenter=function(){
+   mImg.src=arrImgM[index];
+   lImg.src=arrImgL[index];
+ }
+ })
+ function getoffset(obj){
+        var l=obj.offsetLeft;
+        var t=obj.offsetTop;
+        var parent=obj.offsetParent;
+        while(parent){
+            l+=parent.offsetLeft+obj.clientLeft;
+            t+=parent.offsetTop+obj.clientTop;
+            parent=parent.offsetParent;
+        }
+        return {left:l,top:t};
+    }
+    pic.onmouseenter=function(){
+        fdj.style.display="block";
+        detail.style.display="block";
+    }
+    pic.onmouseleave=function(){
+        fdj.style.display="none";
+        detail.style.display="none";
+    }
+    fdj.onmousemove=function(ev){
+        var ev=event||window.event;
+       x=ev.pageX-fdj.offsetWidth/2-getoffset(pic).left;
+       y=ev.pageY-fdj.offsetHeight/2-getoffset(pic).top;
+       
+      var l=pic.clientWidth-fdj.offsetWidth;
+      var t=pic.clientHeight-fdj.offsetHeight;
+       if(x<=0){
+           x=0;
+       }
+       if(x>=l){
+           x=l;
+       }
+       if(y<=0){
+           y=0;
+       }
+       if(y>=t){
+           y=t;
+       }
+       fdj.style.left=x+"px";
+       fdj.style.top=y+"px";
+       detail.scrollLeft=lImg.offsetWidth/mImg.offsetWidth*x;
+       detail.scrollTop=lImg.offsetHeight/mImg.offsetHeight*y;
+
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box_warp {
+            width: 445px;
+            height: 645px;
+            margin: 50px auto;
+            background-color: #f5f9fc;
+            border: 1px solid #f5f9fc;
+            overflow: hidden;
+        }
+
+        .box_min {
+            width: 395px;
+            height: 610px;
+            margin: 15px auto;
+            background-color: #e9e9e9;
+            border: 1px solid #e9e9e9;
+        }
+
+        .box_min_top {
+            width: 330px;
+            height: 420px;
+            /* border:1px solid red; */
+            margin: 30px 30px 20px 30px;
+            box-sizing: border-box;
+        }
+
+        .box_min_top li {
+            width: 90px;
+            height: 86px;
+            background-color: #424242;
+            text-align: center;
+            float: left;
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+
+        .box_min_top li:nth-of-type(1){
+        border: 1px solid #333;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+    .box_min_top li:nth-of-type(1) a{
+        color: red;
+    }
+
+        .box_min_top li a{
+            display: inline-block;
+            color: #fff;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+           .box_min_top li h1 {
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        .box_min_top li h2 {
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        .box_min_bottom {
+            width: 330px;
+            height: 105px;
+            border: 2px solid #fff;
+            background-color: #f1f1f1;
+            margin: 0 auto;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .box_min_bottom li a{
+            text-decoration: none;
+        }
+
+        .box_min_bottom  a h1 {
+            height: 40px;
+            line-height: 40px;
+            font-size: 25px;
+            color: #333;
+            padding: 0 15px;
+            font-weight: bolder;
+            margin-top: 5px;
+        }
+
+        .box_min_bottom a h2 {
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            color: #333;
+            padding: 0 15px;
+        }
+
+        .box_1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* display: none; */
+        }
+
+        .box_2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_4 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_5 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_6 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_7 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_8 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_9 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_10 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_11 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .box_12 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box_warp">
+        <div class="box_min">
+            <div class="box_min_top">
+                <ul class="list">
+                    <!-- <li class="box1">
+                        <h1>1</h1>
+                        <h2>JAN</h2>
+                    </li>
+                    <li class="box2">
+                        <h1>2</h1>
+                        <h2>FER</h2>
+                    </li>
+                    <li class="box3">
+                        <h1>3</h1>
+                        <h2>MAR</h2>
+                    </li>
+                    <li class="box4">
+                        <h1>4</h1>
+                        <h2>APR</h2>
+                    </li>
+                    <li class="box5">
+                        <h1>5</h1>
+                        <h2>MAY</h2>
+                    </li>
+                    <li class="box6">
+                        <h1>6</h1>
+                        <h2>JUN</h2>
+                    </li>
+                    <li class="box7">
+                        <h1>7</h1>
+                        <h2>JUL</h2>
+                    </li>
+                    <li class="box8">
+                        <h1>8</h1>
+                        <h2>AUG</h2>
+                    </li>
+                    <li class="box9">
+                        <h1>9</h1>
+                        <h2>SEP</h2>
+                    </li>
+                    <li class="box10">
+                        <h1>10</h1>
+                        <h2>OCT</h2>
+                    </li>
+                    <li class="box11">
+                        <h1>11</h1>
+                        <h2>NOV</h2>
+                    </li>
+                    <li class="box12">
+                        <h1>12</h1>
+                        <h2>DEC</h2>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="box_min_bottom">
+                <ul class="list1">
+                  
+                </ul>
+                <!-- <div class="box_1">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_2">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_3">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_4">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_5">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_6">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_7">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_8">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_9">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_10">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_11">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div>
+                <div class="box_12">
+                    <h1>1月活动</h1>
+                    <h2>春游踏青活动</h2>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <!-- <script src="a.js"></script> -->
+    <script>
+        var arr = [
+            {
+                mn:"1",
+                ac:"JAN",
+            },
+            {
+                mn:"2",
+                ac:"FER",
+            },
+            {
+                mn:"3",
+                ac:"MAR",
+            },
+            {
+                mn:"4",
+                ac:"APR",
+            },
+            {
+                mn:"5",
+                ac:"MAY",
+            },
+            {
+                mn:"6",
+                ac:"JUN",
+            },
+            {
+                mn:"7",
+                ac:"JUL",
+            },
+            {
+                mn:"8",
+                ac:"AUG",
+            },
+            {
+                mn:"9",
+                ac:"SEP",
+            },
+            {
+                mn:"10",
+                ac:"OCT",
+            },
+            {
+                mn:"11",
+                ac:"NOV",
+            },
+            {
+                mn:"12",
+                ac:"DEC",
+            },
+        ]
+        var list = document.querySelector('.list');
+        for (var i = 0; i < arr.length; i++) {
+            list.innerHTML += `
+    <li>  
+        <a href="">
+        <h1>${arr[i].mn}</h1>
+        <h2>${arr[i].ac}</h2>
+       </a>
+    </li> 
+`;
+        }
+        var arr1=[
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+            {
+                al:"1月活动",
+                ao:"春游踏青活动",
+            },
+        ]
+        var list1 = document.querySelector('.list1');
+        for (var m = 0; m < arr1.length; m++) {
+            list1.innerHTML += `
+    <li>  
+        <a href="">
+        <h1>${arr1[m].al}</h1>
+        <h2>${arr1[m].ao}</h2>
+       </a>
+    </li> 
+`;
+        }
+
+    </script>
+</body>
+
+</html>

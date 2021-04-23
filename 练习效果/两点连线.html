@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            height: 100%;
+
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        //设置画布的宽高；
+        //onresize 事件会在窗口或框架被调整大小时发生。
+        window.onresize = resize();
+        function resize() {
+
+            canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+            canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        }
+        resize();
+        //画布中粒子的个数；
+        var num = 500;
+        //保存粒子
+        var date = [];
+        //x，y为粒子坐标，_x,_y为粒子xy轴加速度，
+        for (var i = 0; i < num; i++) {
+            var x = Math.random() * canvas.width;
+            var y = Math.random() * canvas.height;
+            var _x = Math.random() * 2 - 1;
+            var _y = Math.random() * 2 - 1;
+            date.push({ x, y, _x, _y })
+        }
+        //开始绘画粒子
+        function change(ball) {
+
+            //当粒子遇到边框时反向移动
+            ball._x *= ball.x >= canvas.width || ball.x <= 0 ? -1 : 1;
+            ball._y *= ball.y >= canvas.height || ball.y <= 0 ? -1 : 1;
+            //粒子位移
+            ball.x += ball._x;
+            ball.y += ball._y;
+            ctx.beginPath();//开始绘制粒子
+            ctx.fillStyle = '#000';
+            ctx.fillRect(ball.x, ball.y, 1, 1);
+            ctx.fill();
+        }
+        function move() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);//清除画布
+            //每个粒子的位置
+            for (var i = 0; i < num; i++) {
+                change(date[i]);
+            }
+        }
+        //鼠标活动时，获取鼠标的位置
+        var warea = { x: null, y: null, max: 20000 };
+
+        window.onmousemove = function (e) {
+
+            e = e || window.event;
+            warea.x = e.clientX;
+            warea.y = e.clientY;
+
+        };
+
+        window.onmouseout = function (e) {
+
+            warea.x = null;
+
+            warea.y = null;
+
+        };
+        function fn() {
+            move();
+            var long = 100;
+            //将鼠标坐标添加进去，产生一个用于比对距离的点数组
+            var newballs = [warea].concat(date);
+            
+            date.forEach(function (item) {//遍历数组
+                for(var i = 0; i < newballs.length; i++){
+                    var newx=item.x-newballs[i].x;
+                    var newy=item.y-newballs[i].y;
+                    //两个粒子间的距离 
+                    var dis=Math.sqrt(newx*newx+newy*newy);
+                   
+                    if(dis<long){
+                        //当粒子是鼠标的时候，粒子像鼠标移动(或者说缩短粒子间距)
+                        if (newballs[i]=== warea && dis > (long / 2)) {
+                              
+                                item.x -= newx * 0.04;
+
+                                item.y -= newy * 0.04;
+                              
+
+                        }
+                        //两个粒子间的距离比
+                        ratio = (long - dis) / long;
+
+
+
+
+                        // 画线
+
+                        ctx.beginPath();
+
+                        ctx.lineWidth = ratio / 2;
+
+                        ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
+
+                        ctx.moveTo(item.x, item.y);
+
+                        ctx.lineTo(newballs[i].x, newballs[i].y);
+
+                        ctx.stroke();
+                    }
+                }
+            })
+        }
+        setInterval(fn, 20);
+
+    </script>
+</body>
+
+</html>

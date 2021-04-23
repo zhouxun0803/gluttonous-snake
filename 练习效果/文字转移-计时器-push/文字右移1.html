@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字右移</title>
+    <style>
+        *{
+            width: 0;
+            height: 0;
+            list-style: none;
+        }
+        .box{
+            width: 1000px;
+            height: 300px;
+            background-color: #fff;
+            margin: 50px 150px;
+        }
+        textarea{
+            width: 400px;
+            height: 200px;
+            background-color: greenyellow;
+            box-sizing: border-box;
+        }
+        #t1{
+            float: left;
+            margin: 50px 10px;
+        }
+        #t2{
+            float: right;
+            margin: 50px 10px;
+        }
+        .cnt{
+            width: 150px;
+            height: 200px;
+            margin: 50px auto;
+            /* background-color: hotpink; */
+            float: left;
+        }
+        .cnt button{
+            width: 100px;
+            height: 50px;
+            background-color: orange;
+            color: #fff;
+            margin: 0 25px;
+            border: 0;
+        }
+        .cnt p{
+            width: 60px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            /* background-color: red; */
+            /* color: #fff; */
+            margin: 0 45px;
+        }
+        .dian{
+            width: 100px;
+            height: 50px;
+            margin:  0 25px;
+        }
+        .dian b{
+            width: 10px;
+            height: 10px;
+            margin: 0 3px;
+            background-color: green;
+            float: left;
+        }
+        .cnt p i{
+            margin: 0 3px;
+        }
+    </style>
+</head>
+<body style="background-color: #999;">
+    <div class="box">
+        <textarea name="" id="t1" ></textarea>
+      <div class="cnt">
+        <button id="btn">把文字右移</button>
+        <p><em></em><i>/</i><span></span></p>
+        <div class="dian">
+            <b></b><b></b><b></b>
+            <b></b><b></b><b></b>
+        </div>
+      </div>
+        <textarea name="" id="t2"></textarea>
+    </div>
+    <script>
+        var dian=document.querySelectorAll(".dian b"),arr2=[],
+            l=document.querySelector(".cnt p em"),
+            r=document.querySelector(".cnt p span");
+           
+           btn.onclick=function(){
+            t2.value="";
+            r.innerHTML="";
+            l.innerHTML="";
+            var x=0,y=0;
+           var arr1=t1.value.split("");
+           var i=arr1.length/6*100;
+            r.innerHTML=arr1.length;
+            // dian[x].style.background="red";
+            l.innerHTML=`${x}`;
+            
+            function fn(){
+                if(arr1.length!=0){
+                    var a=arr1[0];
+                arr2.push(a);
+                t1.value=t1.value.replace(t1.value.charAt(0),"");
+                x++;
+              
+                l.innerHTML=`${x}`;
+                arr1.shift();
+                t2.value+=`${arr2[arr2.length-1]}`;
+                console.log(arr2);
+                console.log(arr1);
+            }
+  
+            }
+            function fn1(){
+                 dian.forEach(function(item,index){
+                    item.style.background="green";
+                });
+                if(arr1.length!=0){
+
+                    if(y<dian.length){
+               
+               dian[y].style.background="red";
+               y++;
+              }else{
+                  y=0;
+               dian[y].style.background="red";
+              }
+                }
+
+            }
+           
+            setInterval(fn,100);
+            setInterval(fn1,i);
+           }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+            border:1px solid red;
+            position: relative;
+            border-radius: 50%;
+        }
+        .box span{
+            width: 100px;
+            height: 100px;
+            border:1px solid red;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            /* animation: move 5s linear infinite ; */
+        }
+
+        .box span p{
+            width:3px;
+            height: 150px;
+            background-color: #333;
+            position: absolute;
+            top: 50%;
+            margin-top: -150px;
+            left: 50%;
+            /* animation: move 3s linear infinite; */
+        }
+
+        @keyframes move{
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="box">
+         <span>
+            <p></p>
+         </span>
+     </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+em, i {
+  font-style: normal;
+}
+
+strong, b {
+  font-weight: normal;
+}
+
+html {
+  color: #333;
+}
+
+body {
+  font-size: 16rem;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 400;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    苹果1：<input type="checkbox">
+    苹果2：<input type="checkbox">
+    苹果3：<input type="checkbox">
+    苹果4：<input type="checkbox">
+    苹果5：<input type="checkbox">
+    苹果6：<input type="checkbox">
+    <button>全选</button>
+    <button>不选</button>
+    <button>反选</button>
+</body>
+<script>
+    var oinp=document.querySelectorAll('input');
+    var obtn1=document.getElementsByTagName('button')[0];
+    var obtn2=document.getElementsByTagName('button')[1];
+    var obtn3=document.getElementsByTagName('button')[2];
+    obtn1.onclick=function(){
+       for(var i=0; i<oinp.length; i++){
+           if(oinp[i].checked==false){
+                oinp[i].checked=true;
+           }
+       }
+    }
+    obtn2.onclick=function(){
+       for(var i=0; i<oinp.length; i++){
+           if(oinp[i].checked==true){
+                oinp[i].checked=false;
+           }
+       }
+    }
+    obtn3.onclick=function(){
+       for(var i=0; i<oinp.length; i++){
+        //    if(oinp[i].checked==true){
+        //         oinp[i].checked=false;
+        //    }else{
+        //         oinp[i].checked=true;
+        //    }
+            oinp[i].checked = !oinp[i].checked;
+       }
+    }
+
+
+
+
+
+
+</script>
+</html>
